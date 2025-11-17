@@ -490,6 +490,7 @@ class _PinputState extends State<Pinput>
   Widget _buildFields() {
     Widget onlyFields() {
       return _SeparatedRaw(
+        textDirection: widget.textDirection,
         separatorBuilder: widget.separatorBuilder,
         mainAxisAlignment: widget.mainAxisAlignment,
         children: Iterable<int>.generate(widget.length).map<Widget>((index) {

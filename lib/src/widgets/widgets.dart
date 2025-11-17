@@ -25,11 +25,13 @@ class _SeparatedRaw extends StatelessWidget {
   final List<Widget> children;
   final MainAxisAlignment mainAxisAlignment;
   final JustIndexedWidgetBuilder? separatorBuilder;
+  final TextDirection? textDirection;
 
   const _SeparatedRaw({
     required this.children,
     required this.mainAxisAlignment,
     this.separatorBuilder,
+    required this.textDirection,
     Key? key,
   }) : super(key: key);
 
@@ -38,6 +40,7 @@ class _SeparatedRaw extends StatelessWidget {
     final itemCount = max(0, children.length * 2 - 1);
     final indexedList = [for (int i = 0; i < itemCount; i += 1) i];
     return Row(
+      textDirection: textDirection,
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: mainAxisAlignment,
       mainAxisSize: mainAxisAlignment == MainAxisAlignment.center

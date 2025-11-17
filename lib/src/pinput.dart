@@ -112,6 +112,7 @@ class Pinput extends StatefulWidget {
     this.pinputAutovalidateMode = PinputAutovalidateMode.onSubmit,
     this.scrollPadding = const EdgeInsets.all(20),
     this.contextMenuBuilder = _defaultContextMenuBuilder,
+    this.textDirection,
     Key? key,
   })  : assert(obscuringCharacter.length == 1),
         assert(length > 0),
@@ -165,6 +166,7 @@ class Pinput extends StatefulWidget {
     this.pinputAutovalidateMode = PinputAutovalidateMode.onSubmit,
     this.scrollPadding = const EdgeInsets.all(20),
     this.contextMenuBuilder = _defaultContextMenuBuilder,
+    this.textDirection,
     Key? key,
   })  : assert(length > 0),
         assert(
@@ -438,6 +440,8 @@ class Pinput extends StatefulWidget {
   /// although it will be within the region of one of the group members.
   /// This is useful if you want to un-focus the [Pinput] when user taps outside of it
   final TapRegionCallback? onTapOutside;
+
+  final TextDirection? textDirection;
 
   static Widget _defaultContextMenuBuilder(
     BuildContext context,
